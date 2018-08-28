@@ -18,11 +18,11 @@ public class QuikSort {
             arrays[i] = random.nextInt(101);
         }
         System.out.println(Arrays.toString(arrays));
-        quiksort(arrays, 0, arrays.length - 1);
+        quikSort(arrays, 0, arrays.length - 1);
         System.out.println(Arrays.toString(arrays));
     }
 
-    public static void quiksort(int[] a, int p, int q) {
+    public static void quikSort(int[] a, int p, int q) {
 
         if (p > q)
             return;
@@ -46,8 +46,8 @@ public class QuikSort {
         a[p] = a[i];
         a[i] = temp;
 
-        quiksort(a, p, i - 1);
-        quiksort(a, i + 1, q);
+        quikSort(a, p, i - 1);
+        quikSort(a, i + 1, q);
     }
 
 
