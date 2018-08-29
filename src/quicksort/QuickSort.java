@@ -9,47 +9,52 @@ import java.util.Random;
  */
 public class QuickSort {
 
-    private static final int INT_SIZE = 30;
+    public static final int ARRAY_SIZE = 30;
 
     public static void main(String[] args) {
-        int[] arrays = new int[INT_SIZE];
+        int[] array = new int[30];
         Random random = new Random();
-        for (int i = 0; i < arrays.length; i++) {
-            arrays[i] = random.nextInt(501);
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(500);
         }
-        System.out.println(Arrays.toString(arrays));
-        quickSort(arrays, 0, arrays.length - 1);
-        System.out.println(Arrays.toString(arrays));
+        System.out.println(Arrays.toString(array));
+        quickSort(array);
+        System.out.println(Arrays.toString(array));
+
     }
 
-    public static void quickSort(int[] a, int p, int q) {
+    public static void quickSort(int[] array) {
+        quickSort(array, 0, array.length - 1);
+    }
 
-        if (p >= q)
+    private static void quickSort(int[] array, int left, int right) {
+        if (left >= right)
             return;
-
-        int i = p;
-        int j = q;
-        int temp = a[p];
+        int i = left;
+        int j = right;
+        int temp = array[left];
 
         while (i < j) {
-            while (a[j] >= temp && i < j)
+            while (array[j] >= temp && i < j) {
                 j--;
-            while (a[i] <= temp && i < j)
+            }
+            while (array[i] <= temp && i < j) {
                 i++;
+            }
 
             if (i < j) {
-                int t = a[i];
-                a[i] = a[j];
-                a[j] = t;
+                int t = array[i];
+                array[i] = array[j];
+                array[j] = t;
             }
         }
-        a[p] = a[i];
-        a[i] = temp;
 
-        quickSort(a, p, i - 1);
-        quickSort(a, i + 1, q);
+        array[left] = array[i];
+        array[i] = temp;
+
+        quickSort(array, left, i - 1);
+        quickSort(array, i + 1, right);
     }
-
-
 }
 

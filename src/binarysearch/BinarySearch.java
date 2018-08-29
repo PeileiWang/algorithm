@@ -20,7 +20,7 @@ public class BinarySearch {
             array[i] = random.nextInt(101);
         }
         array[6] = 50;
-        QuickSort.quickSort(array, 0, array.length - 1);
+        QuickSort.quickSort(array);
 
         System.out.println(Arrays.toString(array));
 
