@@ -1,4 +1,4 @@
-package quiksort;
+package quicksort;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -7,7 +7,7 @@ import java.util.Random;
  * Created by Wangpl
  * Time 2018/8/28 13:17
  */
-public class QuikSort {
+public class QuickSort {
 
     private static final int INT_SIZE = 30;
 
@@ -18,11 +18,11 @@ public class QuikSort {
             arrays[i] = random.nextInt(501);
         }
         System.out.println(Arrays.toString(arrays));
-        quikSort(arrays, 0, arrays.length - 1);
+        quickSort(arrays, 0, arrays.length - 1);
         System.out.println(Arrays.toString(arrays));
     }
 
-    public static void quikSort(int[] a, int p, int q) {
+    public static void quickSort(int[] a, int p, int q) {
 
         if (p >= q)
             return;
@@ -46,8 +46,8 @@ public class QuikSort {
         a[p] = a[i];
         a[i] = temp;
 
-        quikSort(a, p, i - 1);
-        quikSort(a, i + 1, q);
+        quickSort(a, p, i - 1);
+        quickSort(a, i + 1, q);
     }
 
 

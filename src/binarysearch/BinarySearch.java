@@ -1,6 +1,6 @@
 package binarysearch;
 
-import quiksort.QuikSort;
+import quicksort.QuickSort;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -20,7 +20,7 @@ public class BinarySearch {
             array[i] = random.nextInt(101);
         }
         array[6] = 50;
-        QuikSort.quikSort(array, 0, array.length - 1);
+        QuickSort.quickSort(array, 0, array.length - 1);
 
         System.out.println(Arrays.toString(array));
 
