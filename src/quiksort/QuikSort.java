@@ -9,13 +9,13 @@ import java.util.Random;
  */
 public class QuikSort {
 
-    private static final int INT_SIZE = 10;
+    private static final int INT_SIZE = 30;
 
     public static void main(String[] args) {
         int[] arrays = new int[INT_SIZE];
         Random random = new Random();
         for (int i = 0; i < arrays.length; i++) {
-            arrays[i] = random.nextInt(101);
+            arrays[i] = random.nextInt(501);
         }
         System.out.println(Arrays.toString(arrays));
         quikSort(arrays, 0, arrays.length - 1);
@@ -24,7 +24,7 @@ public class QuikSort {
 
     public static void quikSort(int[] a, int p, int q) {
 
-        if (p > q)
+        if (p >= q)
             return;
 
         int i = p;
