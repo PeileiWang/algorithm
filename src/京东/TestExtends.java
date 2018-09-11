@@ -6,11 +6,13 @@ package 京东;
  */
 public class TestExtends {
     public static void main(String[] args) {
-        new B();
+        System.out.println(B.b);
     }
 }
 
 class A {
+
+    public static String b = "B-";
 
     {
         System.out.println("A-initial");
@@ -23,7 +25,6 @@ class A {
 
 class B extends A{
 
-    public static String b = "B-";
 
     static {
         System.out.println("B-static");
